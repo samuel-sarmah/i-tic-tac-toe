@@ -1,8 +1,10 @@
 # Tic Tac Toe
 
-A modern, responsive Tic Tac Toe game with intelligent AI opponent and comprehensive testing suite.
+A modern, responsive Tic Tac Toe game with intelligent AI opponent and comprehensive testing suite. 
 
-## 🎮 Features
+![project screenshot](<Screenshot 2026-02-04 at 10-07-05 Tic Tac Toe.png>)
+
+## Features
 
 ### Gameplay
 - **Two Game Modes**: Player vs Player and Player vs AI
@@ -19,7 +21,7 @@ A modern, responsive Tic Tac Toe game with intelligent AI opponent and comprehen
 - **Comprehensive Testing**: 100+ tests covering all functionality
 - **Performance Optimized**: Fast AI decision-making and smooth UI
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Play Online
 Open `index.html` in your browser to start playing immediately.
@@ -27,24 +29,16 @@ Open `index.html` in your browser to start playing immediately.
 ### Development Setup
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone git@github.com:samuel-sarmah/i-tic-tac-toe.git
+
 cd i-tic-tac-toe
 
 # Install dependencies (for testing)
 npm install
 
 # Start development server
-npm run serve
+npm run server
 ```
-
-## 📱 Responsive Design
-
-The game adapts perfectly to any screen size:
-
-- **Desktop** (1200px+): Full-sized board with hover effects
-- **Tablet** (768px-1199px): Optimized spacing and touch targets
-- **Mobile** (320px-767px): Compact layout with larger touch areas
-- **Small Mobile** (<320px): Minimal design with essential features
 
 ### Mobile Optimizations
 - Touch-friendly targets (minimum 44px)
@@ -52,7 +46,7 @@ The game adapts perfectly to any screen size:
 - Smooth animations and transitions
 - Portrait and landscape orientation support
 
-## 🤖 AI Opponent
+## AI Opponent
 
 The AI opponent uses the **minimax algorithm** with alpha-beta pruning for optimal play:
 
@@ -67,7 +61,7 @@ The AI opponent uses the **minimax algorithm** with alpha-beta pruning for optim
 - **Easy**: Random moves for beginners
 - **Hard**: Optimal minimax play for experienced players
 
-## 🧪 Testing
+## Testing
 
 This project includes a comprehensive test suite covering:
 
@@ -90,16 +84,6 @@ npm run test:watch
 npm run test:coverage
 ```
 
-### Test Coverage
-- ✅ Game logic and rules
-- ✅ User interactions
-- ✅ AI behavior and strategy
-- ✅ Responsive design
-- ✅ Error handling
-- ✅ Performance optimization
-- ✅ Accessibility features
-
-## 🎯 Game Rules
 
 ### Basic Rules
 1. Players take turns placing X's and O's on a 3×3 grid
@@ -112,39 +96,25 @@ npm run test:coverage
 - **Play Again** button appears after each game ends
 - **Score tracking** persists across games and mode changes
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 i-tic-tac-toe/
-├── index.html              # Main game interface
-├── script.js               # Game logic and interactions
-├── styles.css              # Responsive styling
-├── tests/                  # Comprehensive test suite
-│   ├── game-logic.test.js  # Unit tests
-│   ├── dom-interaction.test.js # DOM tests
-│   ├── e2e-game-flow.test.js # Integration tests
-│   ├── ai-strategy.test.js # AI tests
-│   ├── responsive-design.test.js # Mobile tests
-│   └── test-utils.js       # Test utilities
-├── package.json            # Dependencies and scripts
-└── README.md              # Project documentation
+├── index.html              
+├── script.js               
+├── styles.css              
+├── tests/                 
+│   ├── game-logic.test.js 
+│   ├── dom-interaction.test.js 
+│   ├── e2e-game-flow.test.js 
+│   ├── ai-strategy.test.js 
+│   ├── responsive-design.test.js 
+│   └── test-utils.js       
+├── package.json           
+└── README.md             
 ```
 
-## 🎨 Design Features
-
-### Visual Design
-- **Modern Dark Theme**: Easy on the eyes with good contrast
-- **Smooth Animations**: Subtle transitions and hover effects
-- **Color Coding**: Clear visual distinction between players
-- **Winning Highlight**: Animated celebration for wins
-
-### Accessibility
-- **Keyboard Navigation**: Full keyboard support
-- **Screen Reader Compatible**: Proper ARIA labels
-- **High Contrast**: Meets WCAG guidelines
-- **Touch Optimized**: Large touch targets for mobile
-
-## 🔧 Technical Details
+## Technical Details
 
 ### Core Technologies
 - **HTML5**: Semantic markup with accessibility features
@@ -158,21 +128,7 @@ i-tic-tac-toe/
 - **Lightweight**: No external dependencies for game
 - **Smooth Animations**: CSS transforms for 60fps performance
 
-## 🎮 Game Statistics
-
-### AI Performance
-- **Decision Time**: <100ms for simple positions
-- **Complex Positions**: <200ms for advanced scenarios
-- **Win Rate**: Optimized play with guaranteed draws or wins
-- **Memory Usage**: Constant space complexity O(1)
-
-### Responsive Metrics
-- **Load Time**: <1s on 3G networks
-- **Touch Targets**: 44px minimum (Apple guidelines)
-- **Viewport Support**: 240px to 4K+ displays
-- **Orientation**: Portrait and landscape modes
-
-## 🚀 Deployment
+## Deployment
 
 ### Static Hosting
 The game works out-of-the-box on any static hosting service:
@@ -190,7 +146,7 @@ npx http-server . -p 8080
 # Or use any live server extension in your code editor
 ```
 
-## 🤝 Contributing
+## Contributing
 
 ### Development Guidelines
 1. **Fork** the repository
@@ -201,34 +157,12 @@ npx http-server . -p 8080
 6. **Push branch**: `git push origin feature-name`
 7. **Submit pull request**
 
-### Code Style
-- Use **ES6+** JavaScript features
-- Follow **semantic HTML5** structure
-- Write **responsive CSS** with mobile-first approach
-- Include **comprehensive tests** for all new features
-- Keep **clean, commented code** with descriptive functions
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🎯 Future Enhancements
-
-### Planned Features
-- [ ] **Local Multiplayer**: Turn-based local play
-- [ ] **Online Multiplayer**: Real-time multiplayer support
-- [ ] **Difficulty Levels**: Multiple AI difficulty settings
-- [ ] **Themes**: Multiple color themes and styles
-- [ ] **Statistics**: Game history and performance tracking
-- [ ] **Sound Effects**: Audio feedback for moves and wins
-
-### Technical Improvements
-- [ ] **PWA Support**: Installable as mobile app
-- [ ] **Offline Mode**: Cache for offline gameplay
-- [ ] **Internationalization**: Multi-language support
-- [ ] **Analytics**: Usage and performance tracking
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Minimax Algorithm**: Classic game theory solution
 - **Responsive Design**: Mobile-first development principles
@@ -237,6 +171,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Enjoy playing Tic Tac Toe!** 🎮
+**Enjoy playing Tic Tac Toe!** 
 
 If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
