@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         board.forEach((value, index) => {
             const cell = document.createElement('div');
             cell.classList.add('cell');
-            
+
             if (value === 'X' || value === 'O') {
                 cell.textContent === value;
             }
@@ -35,5 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
             boardElement.appendChild(cell);
         });
         updateBoardColors();
+    }
+
+    const handleCellClick = (index) => {
+        if (gameActive && board[index] === '') {
+            board[index] = currentPlayer;
+            renderBoard();
+
+            if (checkWinner()) {
+                endGame(`${currentPlayer} Wins! Congrats!!!`);
+            } else if (board.every(cell => cell !== '')) {
+                endGame('Game ends in a Draw');
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                updateTurn();
+                if (playerMode === 'pva' && currentPlayer === 'O') {
+                    makeAIMove();
+                }
+            }
+        }
     }
 })
