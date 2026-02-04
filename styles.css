@@ -7,6 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
+    height: 80vh;
 }
 
 .container {
@@ -42,7 +43,7 @@ select:hove, select:focus {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(2, 120px);
+    grid-template-columns: repeat(3, 120px);
     gap: 20px;
     margin: 40px 0;
 }
