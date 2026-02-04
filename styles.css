@@ -31,14 +31,14 @@ select {
     font-size: 18px;
     border: none;
     border-radius: 7px;
-    background-color: #363a;
+    background-color: #363a3f;
     padding: 15px;
     outline: none;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-select:hove, select:focus {
-    background-color: #474b;
+select:hover, select:focus {
+    background-color: #474b50;
 }
 
 .board {
@@ -55,20 +55,21 @@ select:hove, select:focus {
     align-items: center;
     justify-content: center;
     font-size: 28px;
-    background-color: #282c;
-    border: 3px solid #1e14;
+    background-color: #282c35;
+    color: #fff;
+    border: 3px solid #1e1433;
     border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s, border-color 0.3s;
 }
 
 .cell-winner {
-    background-color: #4caf;
+    background-color: #4caf50;
     border-color: #43a047;
 }
 
 .cell:hover {
-    background-color: #1e18;
+    background-color: #1e1833;
 }
 
 #info {
@@ -113,7 +114,7 @@ select:hove, select:focus {
 
 .modal-content {
     background-color: #1e1e26;
-    display: 20px;
+    padding: 20px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 0 20 rgba(0, 0, 0, 0.3);
