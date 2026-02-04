@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Play a round!</h1>
     <div class="container">
-        <div class="cell">
-
+        <h1>Tic Tac Toe</h1>
+        <div id="mode-selector">
+            <label for="mode">Game Mode:</label>
+            <select name="mode" id="mode">
+                <option value="pvp">Player vs Player</option>
+                <option value="pva">Player vs AI</option>
+            </select>
+        </div>
+        <div id="board" class="board"></div>
+        <div id="info">
+            <div id="turn"></div>
+            <div id="status"></div>
+            <div id="score">
+                <div class="player-score" id="playerXscore">Player X: 0</div>
+                <div class="player-score" id="playerOscore">player O: 0</div>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p id="modal-message"></p>
+                <button id="play-again">Play Again?</button>
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>
