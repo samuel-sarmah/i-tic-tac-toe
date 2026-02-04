@@ -88,4 +88,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
         showModal(message);
     }
+
+    const updateScore = () => {
+        playerXScoreElement.textContent = `Player X: ${playerXScore}`;
+        playerOScoreElement.textContent = `Player O: ${playerOScore}`;
+    }
+
+    const showModal = (message) => {
+        modalMessageElement.textContent = message;
+        modalElement.style.display = 'flex';
+    }
+
+    const hideModal = () => {
+        modalElement.style.display = 'none';
+    }
+
+    const makeAIMove = () => {
+        let bestMove;
+
+        if (board.filter(cell => cell !== '').length === 1) {
+            bestMove = getRandomMove();
+        } else {
+            bestMove = getBestMove();
+        }
+
+        handleCellClick(bestMove);
+    }
+
+    const getRandomMove = () => {
+        const emptyCells = board.reduce((acc, cell, index) => {
+            if (cell === '') {
+                acc.push(index);
+            }
+            return acc;
+        }, []);
+
+        const randomIndex = Math.floor(Math.random() * emptyCells.length);
+        return emptyCells[randomIndex];
+    }
 })
