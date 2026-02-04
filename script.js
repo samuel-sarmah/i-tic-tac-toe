@@ -187,4 +187,47 @@ document.addEventListener('DOMContentLoaded', () => {
             return bestScore;
         }
     }
+
+    const updateBoardColors = () => {
+        for (let i = 0; i < 9; i++) {
+            const cellElement = boardElement.children[i];
+            cellElement.classList.remove('winner');
+        }
+    }
+
+    const isTerminal = () => {
+        return checkWinner() !== null || board.every(cell => cell !== '');
+    }
+
+    modeSelector.addEventListener('change', () => {
+        const previousMode = playerMode;
+        playerMode = modeSelector.value;
+
+        if (previousMode !== playerMode) {
+            playerXScore = 0;
+            playerOScore = 0;
+            updateScore();
+        }
+
+        resetGame();
+    });
+
+    playAgainButton.addEventListener('click', () => {
+        hideModal();
+        resetGame();
+    });
+
+    const resetGame = () => {
+        board = ['', '', '', '', '', '', '', '', ''];
+        currentPlayer = 'X';
+        gameActive = true;
+        statusElement.textContent = '';
+        renderBoard();
+
+        if (playerMode === 'pva' && currentPlayer === 'O') {
+            makeAIMove();
+        }
+    }
+
+    resetGame();
 })
