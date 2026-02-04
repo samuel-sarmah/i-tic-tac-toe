@@ -21,4 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
         [0, 3, 6], [1, 4, 7], [2, 5, 8],  // columns
         [0, 4, 8], [2, 4, 6]              // Diagonals
     ];
+
+    const renderBoard = () => {
+        boardElement.innerHTML = '';
+        board.forEach((value, index) => {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            
+            if (value === 'X' || value === 'O') {
+                cell.textContent === value;
+            }
+            cell.addEventListener('click', () => handleCellClick(index));
+            boardElement.appendChild(cell);
+        });
+        updateBoardColors();
+    }
 })
