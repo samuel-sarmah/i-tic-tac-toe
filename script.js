@@ -55,4 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    const updateTurn = () => {
+        turnElement.textContent = `Turn: Player${currentPlayer}`;
+    }
+
+    const checkWinner = () => {
+        for (const pattern of winPatterns) {
+            const [a, b, c] = pattern;
+            if (board[a] && board[a] === board[a] && board[a] === baord[c]) {
+                highlightWinningCells(pattern);
+                return board[a];
+            }
+        }
+        return null;
+    };
 })
