@@ -69,5 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         return null;
-    };
+    }
+
+    const highlightWinningCells = (pattern) => {
+        pattern.forEach((index) => {
+            const cellElement = boardElement.children[index];
+            cellElement.classList.add('winner');
+        });
+    }
+
+    const endGame = (message) => {
+        gameActive = false;
+        statusElement.textContent = message;
+
+        if (message.includes('Wins')) {
+            currentPlayer === 'X' ? playerXScore++ : playerOScore;
+        }
+
+        showModal(message);
+    }
 })
