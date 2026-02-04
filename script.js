@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let board = ['', '', '', '', '', '', '', '', ''];
     let currentPlayer = 'X';
     let gameActive = true;
-    let playerMode = modeSelector.ariaValueMax; // Default: Player vs Player
+    let playerMode = modeSelector.value; // Default: Player vs Player
     let playerXScore = 0;
     let playerOScore = 0;
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cell.classList.add('cell');
 
             if (value === 'X' || value === 'O') {
-                cell.textContent === value;
+                cell.textContent = value;
             }
             cell.addEventListener('click', () => handleCellClick(index));
             boardElement.appendChild(cell);
@@ -57,13 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const updateTurn = () => {
-        turnElement.textContent = `Turn: Player${currentPlayer}`;
+        turnElement.textContent = `Turn: Player ${currentPlayer}`;
     }
 
     const checkWinner = () => {
         for (const pattern of winPatterns) {
             const [a, b, c] = pattern;
-            if (board[a] && board[a] === board[a] && board[a] === board[c]) {
+            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 highlightWinningCells(pattern);
                 return board[a];
             }
@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
         statusElement.textContent = message;
 
         if (message.includes('Wins')) {
-            currentPlayer === 'X' ? playerXScore++ : playerOScore;
+            currentPlayer === 'X' ? playerXScore++ : playerOScore++;
+            updateScore();
         }
 
         showModal(message);
