@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkWinner = () => {
         for (const pattern of winPatterns) {
             const [a, b, c] = pattern;
-            if (board[a] && board[a] === board[a] && board[a] === baord[c]) {
+            if (board[a] && board[a] === board[a] && board[a] === board[c]) {
                 highlightWinningCells(pattern);
                 return board[a];
             }
