@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderBoard();
 
             if (checkWinner()) {
-                endGame(`${currentPlayer} Wins! Congrats!!!`);
+                endGame(`Player ${currentPlayer} Wins! Congrats!!!`);
             } else if (board.every(cell => cell !== '')) {
                 endGame('Game ends in a Draw');
             } else {
