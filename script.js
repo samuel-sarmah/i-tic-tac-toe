@@ -146,4 +146,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return bestMove;
     }
+
+    const minimax = (board, depth, isMaximizing) => {
+        const scores = {
+            X: -1,
+            O: 1,
+            tie: 0
+        };
+
+        const winner = checkWinner();
+        if(winner !== null) {
+            return scores[winner] / depth;
+        }
+
+        if (isTerminal()) {
+            return 0;
+        }
+
+        if (isMaximizing) {
+            let bestScore = -Infinity;
+            for (let i = 0; i < 9; i++) {
+                if (board[i] === '') {
+                    board[i] = 'O';
+                    let score = minimax(board, depth + 1, false);
+                    board[i] = '';
+                    bestScore = Math.max(score, bestScore);
+                }
+            }
+            return bestScore;
+        } else {
+            let bestScore = Infinity;
+            for (let i = 0; i < 9; i++) {
+                if (board[i] === '') {
+                    board[i] = 'X';
+                    let score = minimax(board, depth + 1, true);
+                    board[i] = '';
+                    bestScore = Math.min(score, bestScore);
+                }
+            }
+            return bestScore;
+        }
+    }
 })
